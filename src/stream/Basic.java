@@ -71,6 +71,10 @@ public class Basic {
 
     }
 
+    /*
+**below Examples is from https://medium.com/@asishpanda444/stream-api-coding-qna-8df8682b7e2a
+     */
+//1. Filter Even Numbers from a List
     public static void evenList() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> list = numbers.stream()
@@ -81,6 +85,7 @@ public class Basic {
         Map<String, List<Integer>> map = numbers.stream().collect(Collectors.groupingBy(res -> res % 2 == 0 ? "Even" : "Odd"));
         System.out.println("Advence :" + map);
     }
+//2. Find Maximum in a List
 
     public static void findMaxFromList() {
         List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
@@ -89,6 +94,7 @@ public class Basic {
         max.ifPresent(System.out::println);
         System.out.println("Res :" + num);
     }
+//3. Sort a List
 
     public static void sortedList() {
         List<Integer> numbers = Arrays.asList(3, 5, 1, 4, 2);
@@ -110,6 +116,14 @@ public class Basic {
         System.out.println("Non-Rep char:" + nonRe);
     }
 
+//6. Convert List of Strings to Uppercase
+    public static void convertToUpper() {
+        List<String> names = Arrays.asList("java", "stream", "api");
+        List<String> upperCase = names.stream().map(x -> x.toUpperCase()).collect(Collectors.toList());
+        System.out.println("To upper case :" + upperCase);
+    }
+
+//7. Sum of Numbers in a List
     public static void main(String[] args) {
 //        convertToUppercase();
 //        colletToCollection();
@@ -120,6 +134,7 @@ public class Basic {
 //        findMaxFromList();
 //        sortedList();
 //        countPrefixString();
-        nonRepeatedChar();
+//        nonRepeatedChar();
+        convertToUpper();
     }
 }
